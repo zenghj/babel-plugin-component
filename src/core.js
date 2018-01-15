@@ -47,7 +47,7 @@ module.exports = function core(defaultLibraryName) {
         let modulePathTpl;
         let styleRoot;
         let mixin = false;
-        let ext = options.ext || '.css';
+        const ext = options.ext || '.css';
 
         if (root) {
           _root = `/${root}`;
