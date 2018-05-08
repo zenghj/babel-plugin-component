@@ -209,6 +209,9 @@ module.exports = function core(defaultLibraryName) {
         },
 
         AssignmentExpression(path, { opts }) {
+          if (!path.hub) {
+            return;
+          }
           const { node } = path;
           const { file } = path.hub;
 
@@ -219,6 +222,9 @@ module.exports = function core(defaultLibraryName) {
         },
 
         ArrayExpression(path, { opts }) {
+          if (!path.hub) {
+            return;
+          }
           const { elements } = path.node;
           const { file } = path.hub;
 
